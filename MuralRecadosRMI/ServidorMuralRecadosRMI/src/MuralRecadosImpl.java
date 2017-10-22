@@ -1,0 +1,55 @@
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MuralRecadosImpl extends UnicastRemoteObject implements IMuralRecados {
+
+	List<Recado> recados;
+
+	public MuralRecadosImpl() throws RemoteException {
+		this.recados = new ArrayList<>();
+	}
+
+	@Override
+	public List<Recado> consultarRecados() throws RemoteException {
+		return this.recados;
+	}
+
+	@Override
+	public int cadastrarRecado(Recado recado) throws RemoteException {
+		boolean existe = false;
+		for (Recado r : recados) {
+			if (r.getCodigo() == recado.getCodigo()) {
+				r.setApelido(recado.getApelido());
+				r.setTexto(recado.getTexto());
+				existe = true;
+			}
+		}
+
+		if (!existe) {
+			if (recados.size() != 0) {
+				recado.setCodigo(recados.get(recados.size() - 1).getCodigo() + 1);
+			} else {
+				recado.setCodigo(1);
+			}
+			
+			recados.add(recado);
+		}
+
+		return recado.getCodigo();
+	}
+
+	@Override
+	public void removerRecado(int id) throws RemoteException {
+		
+		Recado recado = null;
+		for (Recado r : recados) {
+			if (r.getCodigo() == id) {
+				recado = r;
+			}
+		}	
+		recados.remove(recado);
+
+	}
+}

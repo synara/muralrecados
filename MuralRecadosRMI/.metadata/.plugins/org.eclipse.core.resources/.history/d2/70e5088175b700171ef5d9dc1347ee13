@@ -1,0 +1,8 @@
+import java.util.List;
+
+public interface IMuralRecados extends Remote {
+	List<Recado> consultarRecados();
+	int cadastrarRecado(Recado recado);
+	void removerRecado(int id);
+	
+}

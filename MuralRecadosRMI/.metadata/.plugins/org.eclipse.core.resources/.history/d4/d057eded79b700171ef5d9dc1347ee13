@@ -1,0 +1,51 @@
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.List;
+
+public class ClienteRMI {
+
+
+	public static void main(String[] args) {
+
+		try {
+			IMuralRecados mural = (IMuralRecados) Naming.lookup("//localhost:2020/MuralRecadosServer");
+
+			Recado r1 = new Recado();
+			r1.setApelido("Synara");
+			r1.setTexto("Testando");
+
+			mural.cadastrarRecado(r1);
+
+			Recado r2 = new Recado();
+			r2.setApelido("Juliana");
+			r2.setTexto("Hello it's me");
+
+			mural.cadastrarRecado(r2);
+
+			List<Recado> recados = mural.consultarRecados();
+
+			for (Recado r : recados) {
+				System.out.println("Apelido: " + r.getApelido() + "\n" + "Texto: " + r.getTexto());
+			}
+
+			mural.removerRecado(2);
+
+			List<Recado> recados = mural.consultarRecados();
+
+			for (Recado r : recados) {
+				System.out.println("Apelido: " + r.getApelido() + "\n" + "Texto: " + r.getTexto());
+			}
+
+		} catch (Exception e) {
+			System.out.println("HelloClient exception: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		public List<Recado> oi(List<Recado> recados){
+			return recados;			
+		}
+
+	}
+}

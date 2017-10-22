@@ -1,0 +1,4 @@
+INDEX VERSION 1.130+C:\Users\Synara\Desktop\Sistemas Distribuidos\.metadata\.plugins\org.eclipse.jdt.core
+1860665622.index
+3837668973.index
+2658074860.index
