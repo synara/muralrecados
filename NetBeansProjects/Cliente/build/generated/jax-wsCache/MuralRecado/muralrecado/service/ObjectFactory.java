@@ -24,12 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _HelloResponse_QNAME = new QName("http://service.muralrecado/", "helloResponse");
-    private final static QName _ConsultarPorIdResponse_QNAME = new QName("http://service.muralrecado/", "consultarPorIdResponse");
     private final static QName _Inserir_QNAME = new QName("http://service.muralrecado/", "inserir");
     private final static QName _ConsultarResponse_QNAME = new QName("http://service.muralrecado/", "consultarResponse");
-    private final static QName _ConsultarPorId_QNAME = new QName("http://service.muralrecado/", "consultarPorId");
-    private final static QName _Hello_QNAME = new QName("http://service.muralrecado/", "hello");
     private final static QName _Consultar_QNAME = new QName("http://service.muralrecado/", "consultar");
     private final static QName _InserirResponse_QNAME = new QName("http://service.muralrecado/", "inserirResponse");
     private final static QName _Remover_QNAME = new QName("http://service.muralrecado/", "remover");
@@ -51,27 +47,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConsultarPorIdResponse }
-     * 
-     */
-    public ConsultarPorIdResponse createConsultarPorIdResponse() {
-        return new ConsultarPorIdResponse();
-    }
-
-    /**
      * Create an instance of {@link Inserir }
      * 
      */
     public Inserir createInserir() {
         return new Inserir();
-    }
-
-    /**
-     * Create an instance of {@link HelloResponse }
-     * 
-     */
-    public HelloResponse createHelloResponse() {
-        return new HelloResponse();
     }
 
     /**
@@ -107,45 +87,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Hello }
-     * 
-     */
-    public Hello createHello() {
-        return new Hello();
-    }
-
-    /**
-     * Create an instance of {@link ConsultarPorId }
-     * 
-     */
-    public ConsultarPorId createConsultarPorId() {
-        return new ConsultarPorId();
-    }
-
-    /**
      * Create an instance of {@link Recado }
      * 
      */
     public Recado createRecado() {
         return new Recado();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.muralrecado/", name = "helloResponse")
-    public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {
-        return new JAXBElement<HelloResponse>(_HelloResponse_QNAME, HelloResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultarPorIdResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.muralrecado/", name = "consultarPorIdResponse")
-    public JAXBElement<ConsultarPorIdResponse> createConsultarPorIdResponse(ConsultarPorIdResponse value) {
-        return new JAXBElement<ConsultarPorIdResponse>(_ConsultarPorIdResponse_QNAME, ConsultarPorIdResponse.class, null, value);
     }
 
     /**
@@ -164,24 +110,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.muralrecado/", name = "consultarResponse")
     public JAXBElement<ConsultarResponse> createConsultarResponse(ConsultarResponse value) {
         return new JAXBElement<ConsultarResponse>(_ConsultarResponse_QNAME, ConsultarResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultarPorId }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.muralrecado/", name = "consultarPorId")
-    public JAXBElement<ConsultarPorId> createConsultarPorId(ConsultarPorId value) {
-        return new JAXBElement<ConsultarPorId>(_ConsultarPorId_QNAME, ConsultarPorId.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Hello }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.muralrecado/", name = "hello")
-    public JAXBElement<Hello> createHello(Hello value) {
-        return new JAXBElement<Hello>(_Hello_QNAME, Hello.class, null, value);
     }
 
     /**

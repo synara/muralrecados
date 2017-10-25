@@ -27,18 +27,15 @@ public interface MuralRecado {
 
     /**
      * 
-     * @param name
      * @return
-     *     returns java.lang.String
+     *     returns java.util.List<muralrecado.service.Recado>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.HelloResponse")
-    @Action(input = "http://service.muralrecado/MuralRecado/helloRequest", output = "http://service.muralrecado/MuralRecado/helloResponse")
-    public String hello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+    @RequestWrapper(localName = "consultar", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.Consultar")
+    @ResponseWrapper(localName = "consultarResponse", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.ConsultarResponse")
+    @Action(input = "http://service.muralrecado/MuralRecado/consultarRequest", output = "http://service.muralrecado/MuralRecado/consultarResponse")
+    public List<Recado> consultar();
 
     /**
      * 
@@ -62,39 +59,15 @@ public interface MuralRecado {
      * 
      * @param id
      * @return
-     *     returns muralrecado.service.Recado
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "consultarPorId", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.ConsultarPorId")
-    @ResponseWrapper(localName = "consultarPorIdResponse", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.ConsultarPorIdResponse")
-    @Action(input = "http://service.muralrecado/MuralRecado/consultarPorIdRequest", output = "http://service.muralrecado/MuralRecado/consultarPorIdResponse")
-    public Recado consultarPorId(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
-     * @param id
-     */
-    @WebMethod
     @RequestWrapper(localName = "remover", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.Remover")
     @ResponseWrapper(localName = "removerResponse", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.RemoverResponse")
     @Action(input = "http://service.muralrecado/MuralRecado/removerRequest", output = "http://service.muralrecado/MuralRecado/removerResponse")
-    public void remover(
+    public boolean remover(
         @WebParam(name = "id", targetNamespace = "")
         int id);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<muralrecado.service.Recado>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "consultar", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.Consultar")
-    @ResponseWrapper(localName = "consultarResponse", targetNamespace = "http://service.muralrecado/", className = "muralrecado.service.ConsultarResponse")
-    @Action(input = "http://service.muralrecado/MuralRecado/consultarRequest", output = "http://service.muralrecado/MuralRecado/consultarResponse")
-    public List<Recado> consultar();
 
 }

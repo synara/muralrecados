@@ -10,17 +10,11 @@
 <message name="consultarResponse">
 <part name="parameters" element="tns:consultarResponse"/>
 </message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
+<message name="inserir">
+<part name="parameters" element="tns:inserir"/>
 </message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
-</message>
-<message name="consultarPorId">
-<part name="parameters" element="tns:consultarPorId"/>
-</message>
-<message name="consultarPorIdResponse">
-<part name="parameters" element="tns:consultarPorIdResponse"/>
+<message name="inserirResponse">
+<part name="parameters" element="tns:inserirResponse"/>
 </message>
 <message name="remover">
 <part name="parameters" element="tns:remover"/>
@@ -28,32 +22,18 @@
 <message name="removerResponse">
 <part name="parameters" element="tns:removerResponse"/>
 </message>
-<message name="inserir">
-<part name="parameters" element="tns:inserir"/>
-</message>
-<message name="inserirResponse">
-<part name="parameters" element="tns:inserirResponse"/>
-</message>
 <portType name="MuralRecado">
 <operation name="consultar">
 <input wsam:Action="http://service.muralrecado/MuralRecado/consultarRequest" message="tns:consultar"/>
 <output wsam:Action="http://service.muralrecado/MuralRecado/consultarResponse" message="tns:consultarResponse"/>
 </operation>
-<operation name="hello">
-<input wsam:Action="http://service.muralrecado/MuralRecado/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://service.muralrecado/MuralRecado/helloResponse" message="tns:helloResponse"/>
-</operation>
-<operation name="consultarPorId">
-<input wsam:Action="http://service.muralrecado/MuralRecado/consultarPorIdRequest" message="tns:consultarPorId"/>
-<output wsam:Action="http://service.muralrecado/MuralRecado/consultarPorIdResponse" message="tns:consultarPorIdResponse"/>
+<operation name="inserir">
+<input wsam:Action="http://service.muralrecado/MuralRecado/inserirRequest" message="tns:inserir"/>
+<output wsam:Action="http://service.muralrecado/MuralRecado/inserirResponse" message="tns:inserirResponse"/>
 </operation>
 <operation name="remover">
 <input wsam:Action="http://service.muralrecado/MuralRecado/removerRequest" message="tns:remover"/>
 <output wsam:Action="http://service.muralrecado/MuralRecado/removerResponse" message="tns:removerResponse"/>
-</operation>
-<operation name="inserir">
-<input wsam:Action="http://service.muralrecado/MuralRecado/inserirRequest" message="tns:inserir"/>
-<output wsam:Action="http://service.muralrecado/MuralRecado/inserirResponse" message="tns:inserirResponse"/>
 </operation>
 </portType>
 <binding name="MuralRecadoPortBinding" type="tns:MuralRecado">
@@ -67,16 +47,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="hello">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="consultarPorId">
+<operation name="inserir">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -86,15 +57,6 @@
 </output>
 </operation>
 <operation name="remover">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="inserir">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
