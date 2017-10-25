@@ -41,15 +41,21 @@ public class MuralRecadosImpl extends UnicastRemoteObject implements IMuralRecad
 	}
 
 	@Override
-	public void removerRecado(int id) throws RemoteException {
-		
+	public boolean removerRecado(int id) throws RemoteException {
+		boolean encontrou = false;
 		Recado recado = null;
+		
 		for (Recado r : recados) {
 			if (r.getCodigo() == id) {
 				recado = r;
+				encontrou = true;
 			}
-		}	
-		recados.remove(recado);
+		}
+		
+		if(encontrou)
+			recados.remove(recado);
+		
+		return encontrou;
 
 	}
 }

@@ -20,12 +20,7 @@ import muralrecado.model.Recado;
 public class MuralRecado {
 
     public static List<Recado> recados = new ArrayList<>();
-    
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
-    }
-    
+
     @WebMethod(operationName = "inserir")
     public int inserir(@WebParam(name="recado") String recado, @WebParam(name="apelido") String apelido){
         Recado r = new Recado();
@@ -46,13 +41,21 @@ public class MuralRecado {
         return MuralRecado.recados;
     }
     
-    @WebMethod(operationName="consultarPorId")
-    public Recado consultarPorId(@WebParam(name="id") int id){
-        return MuralRecado.recados.get(id);
-    }
-    
     @WebMethod(operationName="remover")
-    public void remover(@WebParam(name="id") int id) {
-        MuralRecado.recados.remove(id);
+    public boolean remover(@WebParam(name="id") int id) {
+        Recado recado = null;
+        boolean encontrou = false;
+        for(Recado r: recados){
+            if(r.getCodigo() == id){
+                recado = r;
+                encontrou = true;
+            }
+        }
+        
+        if(encontrou)
+            recados.remove(recado);
+        
+        return encontrou;
+        
     }  
 }
